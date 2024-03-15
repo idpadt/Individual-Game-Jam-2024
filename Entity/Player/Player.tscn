@@ -1,0 +1,253 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Entity/Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://Entity/Player/Sprites/PlayerV2.png" type="Texture" id=2]
+[ext_resource path="res://Entity/Player/Sprites/PlayerHandV2.png" type="Texture" id=3]
+[ext_resource path="res://Entity/Player/Hand.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Entity/Player/LightSaber.tscn" type="PackedScene" id=7]
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 10, 29.5 )
+
+[sub_resource type="Animation" id=13]
+resource_name = "Death"
+length = 0.3
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.12, 0.24, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.603922, 0.603922, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 0, 0, 0.427451 ), Color( 1, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "Melee"
+length = 0.2
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Hand:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.13, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -63.6, -0.3, 45.2 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Melee_Attack"
+length = 0.2
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerHand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3, -42 ), Vector2( 8, -33 ), Vector2( 6, -26 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("PlayerHand:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1.27456, 1, 1 ),
+"update": 0,
+"values": [ -146.0, -90.0, -51.4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("LightSaber:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("LightSaber:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 5, -44 ), Vector2( 12, -33 ), Vector2( 8, -25 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("LightSaber:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 32.6, 89.9, 129.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.25, 0.25 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Player:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, -32 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("PlayerHand:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("PlayerHand:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -4, -24 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("LightSaber:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Hand:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath(".:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Player" type="KinematicBody2D" groups=["Player"]]
+position = Vector2( 0, -1 )
+collision_layer = 2
+collision_mask = 9
+script = ExtResource( 1 )
+
+[node name="Cshape1" type="CollisionShape2D" parent="."]
+position = Vector2( -0.5, -29.5 )
+shape = SubResource( 12 )
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2( 70, -96 )
+smoothing_enabled = true
+smoothing_speed = 6.0
+
+[node name="Player" type="Sprite" parent="."]
+position = Vector2( 1, -32 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 2 )
+
+[node name="LightSaber" parent="." instance=ExtResource( 7 )]
+visible = false
+position = Vector2( 5, -44 )
+rotation = 0.568977
+monitoring = false
+monitorable = false
+
+[node name="PlayerHand" type="Sprite" parent="."]
+visible = false
+position = Vector2( -4, -24 )
+scale = Vector2( 0.178125, 0.25 )
+texture = ExtResource( 3 )
+
+[node name="Animation" type="Node2D" parent="."]
+scale = Vector2( -1, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
+root_node = NodePath("../..")
+anims/Death = SubResource( 13 )
+anims/Melee = SubResource( 11 )
+anims/Melee_Attack = SubResource( 4 )
+anims/RESET = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Hand" parent="." instance=ExtResource( 4 )]
+position = Vector2( -3, -33 )
+
+[node name="Cshape" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PoolVector2Array( -9, -1, 7, -1, 7, -34, 4, -38, 10, -42, 10, -52, 2, -58, -9, -54, -9, -42, -5, -39, -9, -35 )
+disabled = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

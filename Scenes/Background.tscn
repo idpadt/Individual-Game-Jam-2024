@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Plains bg.png" type="Texture" id=1]
+
+[node name="Background" type="CanvasLayer"]
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.74902, 0.74902, 0.74902, 1 )
+position = Vector2( 599.625, 337.125 )
+scale = Vector2( 0.939648, 0.941319 )
+texture = ExtResource( 1 )

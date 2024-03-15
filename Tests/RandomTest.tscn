@@ -1,0 +1,120 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Tests/RandomTest.gd" type="Script" id=1]
+[ext_resource path="res://Resource/NewGroundTileset.tres" type="TileSet" id=2]
+[ext_resource path="res://Tests/TestCamera.gd" type="Script" id=3]
+
+[node name="RandomTest" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 0.1, 0.1 )
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 128, 128 )
+format = 1
+tile_data = PoolIntArray( 458758, 0, 65537, 458759, 0, 65537, 458760, 0, 65537, 524294, 0, 65537, 524295, 0, 65537, 524296, 0, 65537, 589830, 0, 65537, 589831, 0, 65537, 589832, 0, 65537 )
+
+[node name="lacunarity" type="Button" parent="."]
+margin_left = 25.0
+margin_top = 27.0
+margin_right = 155.0
+margin_bottom = 68.0
+text = "lacunarity +"
+
+[node name="octaves" type="Button" parent="."]
+margin_left = 178.0
+margin_top = 35.0
+margin_right = 317.0
+margin_bottom = 70.0
+text = "octaves +"
+
+[node name="period" type="Button" parent="."]
+margin_left = 342.0
+margin_top = 36.0
+margin_right = 473.0
+margin_bottom = 71.0
+text = "period +"
+
+[node name="persistence" type="Button" parent="."]
+margin_left = 497.0
+margin_top = 37.0
+margin_right = 626.0
+margin_bottom = 76.0
+text = "persistence +"
+
+[node name="lacunarity_min" type="Button" parent="."]
+margin_left = 23.0
+margin_top = 86.0
+margin_right = 156.0
+margin_bottom = 130.0
+text = "lacunarity -"
+
+[node name="octaves_min" type="Button" parent="."]
+margin_left = 180.0
+margin_top = 88.0
+margin_right = 315.0
+margin_bottom = 127.0
+text = "octaves -"
+
+[node name="period_min" type="Button" parent="."]
+margin_left = 345.0
+margin_top = 89.0
+margin_right = 476.0
+margin_bottom = 127.0
+text = "period -"
+
+[node name="persistence_min" type="Button" parent="."]
+margin_left = 504.0
+margin_top = 91.0
+margin_right = 630.0
+margin_bottom = 129.0
+text = "persistence -"
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="lacunarity_counter" type="RichTextLabel" parent="Control"]
+margin_left = 73.0
+margin_top = 154.0
+margin_right = 113.0
+margin_bottom = 194.0
+text = "TEST"
+
+[node name="octaves_counter" type="RichTextLabel" parent="Control"]
+margin_left = 230.0
+margin_top = 151.0
+margin_right = 270.0
+margin_bottom = 191.0
+text = "TEST"
+
+[node name="period_counter" type="RichTextLabel" parent="Control"]
+margin_left = 386.0
+margin_top = 142.0
+margin_right = 426.0
+margin_bottom = 182.0
+text = "TEST"
+
+[node name="persistence_counter" type="RichTextLabel" parent="Control"]
+margin_left = 543.0
+margin_top = 145.0
+margin_right = 583.0
+margin_bottom = 185.0
+text = "TEST"
+
+[node name="TestCamera" type="Camera2D" parent="."]
+position = Vector2( 511, 300 )
+current = true
+limit_left = 0
+limit_top = 0
+smoothing_enabled = true
+script = ExtResource( 3 )
+
+[connection signal="pressed" from="lacunarity" to="." method="_on_lacunarity_pressed"]
+[connection signal="pressed" from="octaves" to="." method="_on_octaves_pressed"]
+[connection signal="pressed" from="period" to="." method="_on_period_pressed"]
+[connection signal="pressed" from="persistence" to="." method="_on_persistence_pressed"]
+[connection signal="pressed" from="lacunarity_min" to="." method="_on_lacunarity_min_pressed"]
+[connection signal="pressed" from="octaves_min" to="." method="_on_octaves_min_pressed"]
+[connection signal="pressed" from="period_min" to="." method="_on_period_min_pressed"]
+[connection signal="pressed" from="persistence_min" to="." method="_on_persistence_min_pressed"]

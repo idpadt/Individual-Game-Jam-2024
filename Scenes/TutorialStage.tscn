@@ -1,0 +1,125 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/Background.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entity/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Resource/Ground Autotile.tres" type="TileSet" id=3]
+[ext_resource path="res://Scenes/TutorialStage.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Portal.png" type="Texture" id=5]
+[ext_resource path="res://Resource/SomeFont.tres" type="DynamicFont" id=6]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 15.0
+height = 16.0
+
+[node name="TutorialStage" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="TileMap" type="TileMap" parent="." groups=["Terrain"]]
+scale = Vector2( 0.25, 0.25 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 128, 128 )
+format = 1
+tile_data = PoolIntArray( 131136, 0, 0, 131137, 0, 2, 196672, 0, 65536, 196673, 0, 3, 196674, 0, 2, 262208, 0, 65536, 262209, 0, 65537, 262210, 0, 3, 262211, 0, 2, 393214, 0, 0, 393215, 0, 1, 327680, 0, 2, 327743, 0, 0, 327744, 0, 4, 327745, 0, 65537, 327746, 0, 65537, 327747, 0, 3, 327748, 0, 2, 458750, 0, 65536, 458751, 0, 65537, 393216, 0, 65538, 393279, 0, 65536, 393280, 0, 65537, 393281, 0, 65537, 393282, 0, 65537, 393283, 0, 65537, 393284, 0, 65538, 524286, 0, 65536, 524287, 0, 65537, 458752, 0, 65538, 458815, 0, 65536, 458816, 0, 65537, 458817, 0, 65537, 458818, 0, 65537, 458819, 0, 65537, 458820, 0, 3, 458821, 0, 2, 589822, 0, 65536, 589823, 0, 65537, 524288, 0, 65538, 524350, 0, 0, 524351, 0, 4, 524352, 0, 65537, 524353, 0, 65537, 524354, 0, 65537, 524355, 0, 65537, 524356, 0, 65537, 524357, 0, 65538, 655358, 0, 65536, 655359, 0, 65537, 589824, 0, 65538, 589886, 0, 65536, 589887, 0, 65537, 589888, 0, 65537, 589889, 0, 65537, 589890, 0, 65537, 589891, 0, 65537, 589892, 0, 65537, 589893, 0, 65538, 720894, 0, 65536, 720895, 0, 65537, 655360, 0, 3, 655361, 0, 2, 655421, 0, 0, 655422, 0, 4, 655423, 0, 65537, 655424, 0, 65537, 655425, 0, 65537, 655426, 0, 65537, 655427, 0, 65537, 655428, 0, 65537, 655429, 0, 65538, 786430, 0, 65536, 786431, 0, 65537, 720896, 0, 65537, 720897, 0, 3, 720898, 0, 2, 720956, 0, 0, 720957, 0, 4, 720958, 0, 65537, 720959, 0, 65537, 720960, 0, 65537, 720961, 0, 65537, 720962, 0, 65537, 720963, 0, 65537, 720964, 0, 65537, 720965, 0, 65538, 851966, 0, 65536, 851967, 0, 65537, 786432, 0, 65537, 786433, 0, 65537, 786434, 0, 3, 786435, 0, 2, 786490, 0, 0, 786491, 0, 1, 786492, 0, 4, 786493, 0, 65537, 786494, 0, 65537, 786495, 0, 65537, 786496, 0, 65537, 786497, 0, 65537, 786498, 0, 65537, 786499, 0, 65537, 786500, 0, 65537, 786501, 0, 65538, 917502, 0, 65536, 917503, 0, 65537, 851968, 0, 65537, 851969, 0, 65537, 851970, 0, 65537, 851971, 0, 3, 851972, 0, 1, 851973, 0, 1, 851974, 0, 1, 851975, 0, 1, 851976, 0, 1, 851977, 0, 1, 851978, 0, 1, 851979, 0, 1, 851980, 0, 1, 851981, 0, 1, 851982, 0, 1, 851983, 0, 1, 851984, 0, 1, 851985, 0, 1, 851986, 0, 1, 851987, 0, 1, 851988, 0, 1, 851989, 0, 1, 851990, 0, 1, 851991, 0, 1, 851992, 0, 1, 851993, 0, 1, 851994, 0, 1, 851995, 0, 1, 851996, 0, 1, 851997, 0, 1, 851998, 0, 1, 851999, 0, 1, 852000, 0, 1, 852001, 0, 1, 852002, 0, 1, 852003, 0, 1, 852004, 0, 1, 852005, 0, 1, 852006, 0, 1, 852007, 0, 1, 852008, 0, 1, 852009, 0, 1, 852010, 0, 1, 852011, 0, 1, 852012, 0, 1, 852013, 0, 1, 852014, 0, 1, 852015, 0, 1, 852016, 0, 1, 852017, 0, 1, 852018, 0, 1, 852019, 0, 1, 852020, 0, 1, 852021, 0, 1, 852022, 0, 1, 852023, 0, 1, 852024, 0, 1, 852025, 0, 1, 852026, 0, 4, 852027, 0, 65537, 852028, 0, 65537, 852029, 0, 65537, 852030, 0, 65537, 852031, 0, 65537, 852032, 0, 65537, 852033, 0, 65537, 852034, 0, 65537, 852035, 0, 65537, 852036, 0, 65537, 852037, 0, 65538, 983038, 0, 131072, 983039, 0, 131073, 917504, 0, 131073, 917505, 0, 131073, 917506, 0, 131073, 917507, 0, 131073, 917508, 0, 131073, 917509, 0, 131073, 917510, 0, 131073, 917511, 0, 131073, 917512, 0, 131073, 917513, 0, 131073, 917514, 0, 131073, 917515, 0, 131073, 917516, 0, 131073, 917517, 0, 131073, 917518, 0, 131073, 917519, 0, 131073, 917520, 0, 131073, 917521, 0, 131073, 917522, 0, 131073, 917523, 0, 131073, 917524, 0, 131073, 917525, 0, 131073, 917526, 0, 131073, 917527, 0, 131073, 917528, 0, 131073, 917529, 0, 131073, 917530, 0, 131073, 917531, 0, 131073, 917532, 0, 131073, 917533, 0, 131073, 917534, 0, 131073, 917535, 0, 131073, 917536, 0, 131073, 917537, 0, 131073, 917538, 0, 131073, 917539, 0, 131073, 917540, 0, 131073, 917541, 0, 131073, 917542, 0, 131073, 917543, 0, 131073, 917544, 0, 131073, 917545, 0, 131073, 917546, 0, 131073, 917547, 0, 131073, 917548, 0, 131073, 917549, 0, 131073, 917550, 0, 131073, 917551, 0, 131073, 917552, 0, 131073, 917553, 0, 131073, 917554, 0, 131073, 917555, 0, 131073, 917556, 0, 131073, 917557, 0, 131073, 917558, 0, 131073, 917559, 0, 131073, 917560, 0, 131073, 917561, 0, 131073, 917562, 0, 131073, 917563, 0, 131073, 917564, 0, 131073, 917565, 0, 131073, 917566, 0, 131073, 917567, 0, 131073, 917568, 0, 131073, 917569, 0, 131073, 917570, 0, 131073, 917571, 0, 131073, 917572, 0, 131073, 917573, 0, 131074 )
+
+[node name="Background" parent="." instance=ExtResource( 1 )]
+layer = -128
+
+[node name="Premise" type="RichTextLabel" parent="."]
+margin_left = 58.0
+margin_top = 167.0
+margin_right = 521.0
+margin_bottom = 323.0
+custom_fonts/normal_font = ExtResource( 6 )
+text = " YOU, Johhny Bravo, HAS BEEN ISEKAI'D TO ANOTHER WORLD.
+ Meaning, YOU HAVE BEEN THROWN TO ANOTHER REALITY.
+
+ Your mission :
+ Introduce our new magical fantasy friends the beauty of
+ THE AMERICAN FREEDOOMMM."
+
+[node name="Controls" type="RichTextLabel" parent="."]
+margin_left = 144.0
+margin_top = 345.0
+margin_right = 319.0
+margin_bottom = 431.0
+custom_fonts/normal_font = ExtResource( 6 )
+text = " A D : Left Right
+ W or SPACE : Jump
+ Esc : Pause"
+
+[node name="Mechanic" type="RichTextLabel" parent="."]
+margin_left = 641.0
+margin_top = 183.0
+margin_right = 904.0
+margin_bottom = 331.0
+custom_fonts/normal_font = ExtResource( 6 )
+text = " The inhabitants of this world has
+ advanced magic that is effective
+ againts AMERICA'S FREEDOM.
+
+ But AMERICA has found weapons
+ that are effective against THEM."
+
+[node name="Mechanic P2" type="RichTextLabel" parent="."]
+margin_left = 928.0
+margin_top = 180.0
+margin_right = 1260.0
+margin_bottom = 379.0
+custom_fonts/normal_font = ExtResource( 6 )
+text = " Left Mouse Button : Ranged Attack
+ Use this for those pesky flying monsters.
+ They're immune to THE FORCE
+
+ Right Mouse Button : Melee Attack
+ Use this for disgusting grounded goblins.
+ They're immune to our AMERICA 
+ FREEDOM BLASTERS."
+
+[node name="Merchant" type="RichTextLabel" parent="."]
+margin_left = 1345.0
+margin_top = 183.0
+margin_right = 1687.0
+margin_bottom = 418.0
+custom_fonts/normal_font = ExtResource( 6 )
+text = " Don't forget to help merchants !
+ They can help you after you help them
+ eliminate all monsters.
+
+ E : Open Shop
+ Only after you help them !
+
+ Remember, DO NOT attack them !
+"
+
+[node name="Final" type="RichTextLabel" parent="."]
+margin_left = 1754.0
+margin_top = 177.0
+margin_right = 2005.0
+margin_bottom = 265.0
+custom_fonts/normal_font = ExtResource( 6 )
+text = " NOW GO THROUGH THE PORTAL
+
+ GOOD LUCK OUT THERE ! ! !"
+
+[node name="PS" type="RichTextLabel" parent="."]
+margin_left = 1742.0
+margin_top = 367.0
+margin_right = 1882.0
+margin_bottom = 427.0
+text = "ps. youre deaf now.
+so you cant hear anything :)"
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 182, 261 )
+
+[node name="Portal" type="Area2D" parent="."]
+position = Vector2( 1891, 341 )
+
+[node name="Sprite" type="Sprite" parent="Portal"]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Portal" to="." method="_on_Portal_body_entered"]
