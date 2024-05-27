@@ -144,7 +144,7 @@ func spawn_monster():
 	
 	var middle = map_length/2
 	for x in range(num):
-		var value = noise.get_noise_1d(x)
+		var value = rand_range(-1, 1)
 		var enemy
 		if value > 0:
 			enemy = ground_enemy_path.instance()

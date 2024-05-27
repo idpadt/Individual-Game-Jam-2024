@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Entity/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Portal.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Resource/Ground Autotile.tres" type="TileSet" id=6]
 [ext_resource path="res://Objects/Sprites/Coin.png" type="Texture" id=7]
 [ext_resource path="res://Assets/PIXELADE.TTF" type="DynamicFontData" id=8]
+[ext_resource path="res://Scenes/Cheat_Detector.gd" type="Script" id=9]
 [ext_resource path="res://Scenes/Paused_Menu.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Shop_Screen.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Merchant Head.png" type="Texture" id=12]
@@ -148,4 +149,12 @@ shape = SubResource( 4 )
 
 [node name="Game_Over" parent="." instance=ExtResource( 3 )]
 
+[node name="Cheat_Detector" type="Node2D" parent="."]
+script = ExtResource( 9 )
+
+[node name="Timer" type="Timer" parent="Cheat_Detector"]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="body_entered" from="Portal" to="Portal" method="_on_Portal_body_entered"]
+[connection signal="timeout" from="Cheat_Detector/Timer" to="Cheat_Detector" method="_on_Timer_timeout"]
